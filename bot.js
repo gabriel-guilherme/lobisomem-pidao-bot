@@ -1,6 +1,9 @@
 require('dotenv').config();
 const { bot, joinVoiceChannel, createAudioPlayer, NoSubscriberBehavior, createAudioResource, Moon, cron } = require('./settings');
-var { connectVoiceChannel, playSound, waitMessage, farinhaCumbuca, transformCicle } = require('./settings')
+var {connectVoiceChannel, playSound} = require('./src/script/voiceChatSounds')
+var {waitTimeMessage, farinhaCumbuca} = require('./src/script/textChat')
+//var {transformCicle} = require('./src/script/jobs/transformCicle')
+
 
 var $STATE_TRANSFORMATION = 'lobisomem';
 
