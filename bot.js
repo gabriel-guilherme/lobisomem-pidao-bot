@@ -12,7 +12,11 @@ bot.on('ready', ()=>{
         bot.user.setAvatar('./src/img/NOITE.png');
         for(item of guilds){
             let botMember = item[1];
-            botMember.members.resolve('1079533350970216509').setNickname('Lobisomem Pidão - Debugger');
+            if(process.env.ENV === 'DEV'){
+                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Lobisomem Pidão - Debugger');
+            }else{
+                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Lobisomem Pidão');
+            }
             //playSound('./src/sound/O_Lobo_pede.mp3')
             $STATE_TRANSFORMATION = 'lobisomem'
         }
@@ -22,7 +26,11 @@ bot.on('ready', ()=>{
         bot.user.setAvatar('./src/img/DIA.png');
         for(item of guilds){ 
             let botMember = item[1];
-            botMember.members.resolve('1079533350970216509').setNickname('Homem - Debugger');
+            if(process.env.ENV === 'DEV'){
+                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Homem - Debugger');
+            }else{
+                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Homem');
+            }
 
             $STATE_TRANSFORMATION = 'homem'
         }
