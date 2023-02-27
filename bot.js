@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { bot, joinVoiceChannel, createAudioPlayer, NoSubscriberBehavior, createAudioResource, Moon, cron } = require('./settings');
 var { connectVoiceChannel, playSound, waitMessage, farinhaCumbuca, transformCicle } = require('./settings')
+var { getRandomMeme } = require('./src/script/voiceChatSounds')
 
 var $STATE_TRANSFORMATION = 'lobisomem';
 
@@ -27,9 +28,9 @@ bot.on('ready', ()=>{
         for(item of guilds){ 
             let botMember = item[1];
             if(process.env.ENV === 'DEV'){
-                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Homem - Debugger');
+                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Homem - Debugger')
             }else{
-                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Homem');
+                botMember.members.resolve(process.env.DISCORD_ID_BOT).setNickname('Homem')
             }
 
             $STATE_TRANSFORMATION = 'homem'
@@ -65,6 +66,15 @@ bot.on('messageCreate', (message)=>{
     }
 })
 
+bot.on('messageCreate', (message)=>{
+    channelID = message.member.voice.channelId
+    server = bot.channels.cache.get(channelID)
+    
+    if(message.content === 'meme-me'){
+        playSound(getRandomMeme())
+        
+    }
+})
 
 
 
