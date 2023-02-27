@@ -6,11 +6,7 @@ var cron = require("cron");
 const bot = new Client({intents: ['Guilds', 'GuildMessages', 'MessageContent', 'GuildVoiceStates']});
 
 
-//func
 
-var {connectVoiceChannel, playSound} = require('./src/script/voiceChatSounds')
-var {waitTimeMessage, farinhaCumbuca} = require('./src/script/textChat')
-//var {transformCicle} = require('./src/script/jobs/transformCicle')
 
 module.exports = {
   bot,
@@ -20,9 +16,4 @@ module.exports = {
   createAudioResource,
   Moon,
   cron,
-  connectVoiceChannel,
-  playSound,
-  waitTimeMessage,
-  farinhaCumbuca
-  //,transformCicle
 };
