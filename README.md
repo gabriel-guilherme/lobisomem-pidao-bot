@@ -6,7 +6,7 @@
 
 
 ## Comandos 
-- QUEM E VOCE!
-- lobisomem pidao
-- oq vc quer 
-
+- `QUEM E VOCE!`: Descobre quem é o tal do lobisão pidomem
+- `meme-me`: Reproduz um meme aleatório
+- `lobisomem pidao`: Chama a atenção do lobisão pidomem
+- `oq vc quer`: Pergunta as intenções do lobisão pidomem
