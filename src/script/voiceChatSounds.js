@@ -1,6 +1,7 @@
 const { joinVoiceChannel } = require('@discordjs/voice');
 const { createAudioPlayer, NoSubscriberBehavior, createAudioResource } = require('@discordjs/voice');
 const fs = require('fs');
+const { customEntrances } = require('./data')
 
 var connectVoiceChannel = function(){
     const connection = joinVoiceChannel({
@@ -27,8 +28,18 @@ playSound = function(path){
     connection.subscribe(player)
 }
 
+customEntryPlay = function(id){
+    console.log(customEntrances[id])
+    connection = connectVoiceChannel()
+    const player = createAudioPlayer()
+    const resource = createAudioResource('../sound/secretaria.mp4')
+    player.play(resource)
+    connection.subscribe(player)
+}
+
 module.exports = {
     connectVoiceChannel,
     playSound,
-    getRandomMeme
+    getRandomMeme,
+    customEntryPlay
 }
