@@ -1,5 +1,5 @@
 customEntrances = {
-"492450443234902027":"../sound/secretaria.mp4"
+"1051235170381987850":"./src/sound/secretaria.mp4"
 }
 
 module.exports = {

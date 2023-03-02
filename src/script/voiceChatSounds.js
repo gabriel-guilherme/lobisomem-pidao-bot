@@ -3,6 +3,7 @@ const { createAudioPlayer, NoSubscriberBehavior, createAudioResource } = require
 const fs = require('fs');
 const { customEntrances } = require('./data')
 
+
 var connectVoiceChannel = function(){
     const connection = joinVoiceChannel({
         channelId: channelID,
@@ -29,10 +30,9 @@ playSound = function(path){
 }
 
 customEntryPlay = function(id){
-    console.log(customEntrances[id])
     connection = connectVoiceChannel()
     const player = createAudioPlayer()
-    const resource = createAudioResource('../sound/secretaria.mp4')
+    const resource = createAudioResource(customEntrances[id])
     player.play(resource)
     connection.subscribe(player)
 }

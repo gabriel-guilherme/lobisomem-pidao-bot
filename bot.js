@@ -97,13 +97,14 @@ bot.on('messageCreate', (message)=>{
 
 bot.on('voiceStateUpdate', (oldState, newState)=>{
 
+
         if(oldState.channelId !== channelID && newState.channelId === channelID&&newState.channelId == channelID&&newState.member.id!=process.env.DISCORD_ID_BOT){
             //connectVoiceChannel();
             //console.log(newState.member.id)
             customEntryPlay(newState.member.id)
-            console.log('asdasdasd')
             //throw new Error('sla')
         }
+
    
 })
 bot.login(process.env.DISCORDJS_BOT_TOKEN)
